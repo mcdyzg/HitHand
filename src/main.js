@@ -12,7 +12,7 @@ var isHitting = false;
 var isHided = 0;
 var totalChance = 5;
 var isHiding = false;
-var time;
+var time = 30;
 var leftTimeText;
 var hitted = false;
 var NPC;
@@ -182,7 +182,7 @@ game.States.main = function() {
             if(time > 0){
                 time--;
             }else if(time === 0){
-                game.start('over')
+                game.state.start('over')
             }
         }, this);
 
@@ -246,7 +246,7 @@ game.States.over = function(){
         if(hitted){
             tooltip.setText('回去再练三十年\nOK?');
         }else{
-            tooltip.setText('单身三十年的手速\n自愧不如');
+            tooltip.setText('单身三十年的手速\n朕自愧不如');
         }
         tooltip.anchor.setTo(0.5,0.5);
     }
