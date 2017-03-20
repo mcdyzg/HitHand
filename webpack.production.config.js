@@ -13,7 +13,7 @@ const config = {
 
     output: {
         path: __dirname + '/dist',
-        filename: '[name].min.js',
+        filename: 'hithand/js/[name].min.js',
         // publicPath:'./'                // 打包好的js如果放置在cdn,将本项设置为cdn路径即可，打包出的html自动生成 cdn路径+[name].min.js的script标签     
     },
 
@@ -44,11 +44,10 @@ const config = {
         }),
         new HtmlWebpackPlugin({                         //生成模板文件
             template: __dirname + "/index.tpl.html",
-            filename: 'index.html',
+            filename: 'hithand/index.html',
         }),
         new TransferWebpackPlugin([
-          {from:'assets',to:'assets'},
-          {from:'js',to:'js'}
+          {from:'hithand',to:'hithand'}
         ]),
 
     ]

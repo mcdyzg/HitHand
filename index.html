@@ -30,22 +30,23 @@
         body{
             padding: 0;
             margin: 0;
-            overflow: hidden;
         }
         #container{
             width:100%;
+            position: absolute;
+            top:0;
+            right:0;
+            left:0;
+            bottom:0;
         }
     </style>
 </head>
 
 <body>
     <div id="container"></div>
-    <script src="./js/jquery-2.2.3.min.js"></script>
-    <script src="./js/phaser.min.js"></script>
+    <script src="./hithand/js/jquery-2.2.3.min.js"></script>
+    <script src="./hithand/js/phaser.min.js"></script>
     <script src="app.js" charset="utf-8"></script>
-    <script type="text/javascript">
-    $('#container').height($('#container').width()*1.78);
-    </script>
 </body>
 
 </html>

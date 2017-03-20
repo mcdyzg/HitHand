@@ -21,21 +21,23 @@ var scare;
 var hit;
 var scare;
 var lock;
+// 难度，数值越大越难，越小越简单
+var diffculty = 2; 
 
 game.States = {};
 
 game.States.main = function() {
     this.preload = function() {
-        game.load.image('bg', 'assets/img/bg.png');
-        game.load.image('myhand', 'assets/img/myhand.png');
-        game.load.image('button2', 'assets/img/button2.png');
-        game.load.image('yanggong', 'assets/img/yanggong.png');
-        game.load.image('boom', 'assets/img/boom.png');
-        game.load.image('jingong', 'assets/img/jingong.png');
-        game.load.image('lock', 'assets/img/lock.png');
-        game.load.spritesheet('chance', 'assets/img/chance.png',53,50,2);
-        game.load.spritesheet('hand', 'assets/img/hand.png',282,800,2);
-        game.load.bitmapFont('number', 'assets/img/number.png', 'assets/img/number.xml');
+        game.load.image('bg', 'hithand/assets/img/bg.png');
+        game.load.image('myhand', 'hithand/assets/img/myhand.png');
+        game.load.image('button2', 'hithand/assets/img/button2.png');
+        game.load.image('yanggong', 'hithand/assets/img/yanggong.png');
+        game.load.image('boom', 'hithand/assets/img/boom.png');
+        game.load.image('jingong', 'hithand/assets/img/jingong.png');
+        game.load.image('lock', 'hithand/assets/img/lock.png');
+        game.load.spritesheet('chance', 'hithand/assets/img/chance.png',53,50,2);
+        game.load.spritesheet('hand', 'hithand/assets/img/hand.png',282,800,2);
+        game.load.bitmapFont('number', 'hithand/assets/img/number.png', 'hithand/assets/img/number.xml');
         if (!game.device.desktop) {
             this.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
             this.scale.forcePortrait = true;
@@ -158,7 +160,7 @@ game.States.main = function() {
         button2.width = winW;
         button2.height = 140;
 
-        // 打手
+        // 打手的动画
         hitAnim = hand.animations.add('hit');
         hand.events.onInputDown.add(()=>{},this);
 
@@ -218,7 +220,7 @@ game.States.main = function() {
                 return;
             }
             isHitting = true;
-            hand.play('hit',4,false);
+            hand.play('hit',diffculty,false);
             hitAnim.onComplete.add(()=>{
                 hit.start()
             }, this);
