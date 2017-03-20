@@ -1,9 +1,9 @@
-# phaser-boilerplate
+# HitHand，打手小游戏，题材仿淘宝双十一打手游戏
 
 
 ----------
 
-phaser游戏开发脚手架，支持ES6语法，支持class类继承
+phaser游戏开发小游戏，支持ES6语法，支持class类继承
 
 ## USAGE
 
